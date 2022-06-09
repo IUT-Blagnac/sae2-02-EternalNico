@@ -1,0 +1,2 @@
+
+char* erase(char* , int);

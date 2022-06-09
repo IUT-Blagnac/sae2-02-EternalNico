@@ -1,0 +1,100 @@
+= SAÉ 2.02
+:icons: font
+:toc: left
+// Antora 
+// => traduction automatique fr/uk
+// => niveau de guidage
+//include:definitions.txt (glossaire des termes du BUT comme SAE)
+:codacy: https://www.codacy.com[Codacy]
+:joular: https://www.noureddine.org/research/joular[Joular]
+
+== Auteurs
+
+- Jean-Michel Bruel (Université de Toulouse), mailto:bruel@irit.fr[bruel@irit.fr]
+- Version: 2022.05 (BUT1 2022)
+//- Kata length: 12 hours
+- Durée :  15 heures (9 créneaux TP + 1 cours)
+
+// == Objectives
+== Objectifs
+
+L'objectif de cette SAÉ (**S**ituation d'**A**pprentissage et d'**É**valuation) est d'approfondir la réflexion sur l'approche algorithmique des problèmes rencontrés pendant les phases de développement. (cf. link:docs/sae2.02.pdf[]).
+Plus précisément :
+
+  - Participer à un concours de codage
+  - Lire, comprendre et évaluer un code qui n'est pas le sien
+  - Comparer des algorithmes sur un critère précis
+  - Justifier de manière objective ses comparaisons
+
+// == Documents fournis
+
+//   - IEEE 2021 International Requirements Engineering Conference
+//   - [Proposal](./docs/tutorial_proposal.pdf)
+//   - [Tutorial Handout](./docs/handout.pdf)
+
+//== Prerequisites
+// == Prérequis
+
+== Description
+
+Cette SAÉ se déroule en 2 phases d'une semaine chacune.
+
+=== Phase 1 : concours d'algorithme
+
+Vous allez devoir soumettre un algorithme qui résout un problème simple mais qui peut se régler avec plusieurs solutions différentes. 
+Vous avez une semaine (3 séances de TP non encadrées) pour réaliser et soumettre votre (ou vos) solutions.
+
+Le problème est le suivant :
+
+On souhaite simplement enlever tous les espaces (les "blancs") d'un texte d'une longueur quelconque fourni en paramètre.
+
+Les contraintes sont les suivantes :
+
+- votre algorithme doit être écrit dans l'un des langages suivants au choix : java, C ou Python
+- il doit permettre à l'un des 3 programmes principaux fournis (java, C ou Python) de fonctionner (respect donc des noms de classes, méthodes ou fonctions en conséquence)
+
+Vu qu'il existe de nombreuses façons de résoudre ce problème, vous devrez indiquer la principale qualité de votre algorithme en précisant dans quelle catégorie vous concourrez :
+
+Simplicité::
+  Ici il s'agit de faire un code facile à maintenir, lisible par des humains.
+Efficacité::
+  Peu importe le code source, c'est l'efficacité de son exécution qui est recherché (complexité maîtrisée, temps d'exécution minimal, ...)
+Sobriété numérique::
+  L'algorithme consomme le moins de ressources possible (mémoire, calcul, ...)
+
+NOTE: Vous pouvez soumettre plusieurs algorithmes dans plusieurs catégories pour maximiser vos chances de gagner le concours.
+
+=== Phase 2 : comparaison et évaluation des solutions
+
+Dans cette deuxième phase, elle aussi d'une semaine (mais 6 séances de TP), vous devrez comparez des solutions entre elles, et les classer en justifiant vos analyses.
+
+Vous vous verrez affecter, pour chaque catégorie d'algorithmes (Simplicité, Efficacité, Sobriété) 3 solutions au hasard parmi celles soumises en phase 1.
+
+Il vous faudra évaluer, pour chaque algorithme, les critères suivants et classer en conséquence les algorithmes.
+
+=== Critères de comparaison
+
+Lisibilité du code::
+  Ce critère est subjectif. Il se base sur la facilité à comprendre ce que fait le code.
+Qualité du code::
+  Vous utiliserez des outils open source de mesure de qualité de code (e.g., {codacy}).
+Efficacité::
+  Il s'agit d'évaluer la complexité algorithmique de la solution (O(n2) ou O(nlog(n))). Si on double par exemple la taille de la donnée en entrée, est-ce qu'on double le temps de calcul ?
+Sobriété numérique::
+  Cela devient un critère de plus en plus important. Certains outils permettent de donner une mesure de la consommation en ressources d'un algorithme (e.g., {joular}).
+Temps d'exécution::
+  Il s'agit de mesurer le temps d'exécution.
++
+WARNING: Il conviendra de prendre des mesures sur des données plus ou moins grandes, certains algorithmes étant plus rapides que d'autres en fonction de la taille des données en entrée.
+
+// == Deliverables
+== Livrables
+
+- Le rapport d'évaluation des algorithmes (e.g., jupyter, asciidoc ou PDF)
+- Les codes de test, d'évaluation ou de mesure
+- Les références des librairies/outils utilisés (pour ceux non fournis)
+- La chaîne de compilation et exécutable, ou paquetage selon les standards du langage (comment exécuter vos codes d'évaluation)
+
+WARNING: Les répertoires et fichiers existants devront être complétés et mis à jour sans être renommés. Les binaires de compilation (répertoire `bin` par exemple) ne devront pas être poussés sur le dépôt.
+
+
