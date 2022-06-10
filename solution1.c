@@ -3,7 +3,10 @@
 #include <string.h>
 #include "solution.h"
 
-
+/** Permet de supprimer seulement les espaces individuels d'une chaîne de caractère
+ * @param IN chaine : La chaîne de caractère à tester
+ *
+**/
 char* erase(char* chaine) {
   //Déclaration des attributs neécessaires
   char* ChaineSE = calloc(strlen(chaine),sizeof(int)), i = 0, j = 0;
