@@ -1,0 +1,309 @@
+= [red]#SAE Algorithme 2.02 partie Sobriété#
+:toc:
+:toc-title: Table des matières
+:toclevels: 6
+:numbered:
+:nofooter:
+
+
+Réalisé par *Sacilotto Nicolas (4A)*
+
+
+{empty} +
+
+
+*NOTATION*
+|===
+|*Cas*|*Points*
+|Ne compile/s'exécute pas|0
+|Ne passe pas les tests fournis ou a rate certains cas|1
+|Meilleur algo de la catégorie|5
+|2nd algo|4
+|3e algo|3
+|4e algo|2
+|===
+En cas d'ex-aequo, même note. (5/5/3/2 par exemple).
+
+{empty} +
+
+
+
+== [yellow]#Sobriété n°166 (c)#
+
+*NOTATION*
+|===
+|*1* point|_L'algo ne produit pas le résultat attendu._
+|===
+
+
+=== Prérequis
+
+
+[.text-justify]
+Ajout de la librairie suivante :  +
+
+[SOURCE, c]
+----
+#include <time.h>
+----
+
+[.text-justify]
+Permet de déterminer le temps d'exécution de l'algorithme  +
+
+
+=== Reproductibilité
+
+[.text-justify]
+Lancer l'algorithme avec les chaînes de caractères contenue dans le jeux d'essaie du tableau ci-dessous :
+
+
+=== Analyse de la sobriété 
+[.text-justify]
+La sobriété d'un programme peut se déterminer en fonction sa capacité à utiliser des ressources, quels soient spatiales (mémoire) ou bien temporelle (temps d'exécution). Afin d'avoir une idée de ce que le programme consomme en mémoire, je vais réinvestir le module de programmation bas niveau et plus précisément un des TP ou l'on utilisait une méthode ``sizeof()`` ainsi je pourrais avoir une idée de combien de mémoire en octet l'algorithme à besoin. (Ici je vais surtout utilser les variables déclarées comme les indices, les tableaux de caractères etc.)
+
+=== Tests et temps d'exécution
+[.text-justify]
+[red]#*Ce programme ne passe pas tous les tests !*# +
+ +
+
+Les espaces ont été remplacés par le caractère ``_``.
+
+|===
+|*Chaînes de caractères de tests*|*Résultat de l'algorithme*|*Résultats attendus*|*Temps d'exécution*
+|``''`` (vide)|[red]#❌ Ne s'exécute pas#| ``''``| Nothing
+|``'06___07_65_19_70_'``|[red]#❌# ``'06'``| ``'06___07651970'``| 6.00 ms
+|``'issou_chancla'``|[red]#❌# ``'issou'``| ``'issouchancla'``| 0.00 ms
+|``'Cou_cou\__J_M__B'``|[red]#❌# ``'Cou'``| ``'Coucou\__JM__B'``| 2.00 ms
+|``'_'``|[red]#❌ Ne s'exécute pas#| ``''``| Nothing
+|``'__'``|[red]#❌ Ne s'exécute pas#| ``'__'``| Nothing
+|===
+
+
+=== Consomation mémoire (en octet)
+
+
+|===
+|*Variables utilisées*|*Coût en octet (résultat fonction sizeof)*
+|``'int a = 0;'`` |[yellow]#4 octets pour variable de type int nommée 'a'#
+|``'int b = 0;'`` |[yellow]#4 octets pour variable de type int nommée 'b'#
+|``'int nbrArg '``|[yellow]#4 octets pour variable de type int nommée 'nbrArg'#
+|``'char** listArg'``|[yellow]#4 octets pour le tableau de char nommée 'listArg'#
+| [green]#Au total :# | [yellow]#16 octets sont nécessaires en mémoire pour que cet algorithme fonctionne correctement#
+|===
+
+
+== [yellow]#Sobriété n°57 (c)#
+
+*NOTATION*
+|===
+|*4* point|_L'algo ne compile pas, mais suite aux ajouts nécessaires il fonctionne correctement et passe tous les tests._
+|===
+
+
+=== Problème constaté
+
+Cet algo contient une erreur lors de sa compilation, de ce fait il est impossible de le classifié car impossible d'effectuer des tests dessus. 
+
+*Description de l'erreur*
+
+Voici l'erreur constatée lors de la compilation, ici l'erreur provient d'un manque d'import de la librairie <stdlib.h> et <string.h> 
+
+image::Erreur.png[description de l'erreur]
+
+
+
+=== Code ajouté pour que le code fonctionne
+
+
+[.text-justify]
+Afin de quand même l'évaluer, j'ai ajouté le code qu'il manquait pour pouvoir effectuer des tests sur cet algorithme.
+Ici, j'ai ajouté ce code ci-dessous :
+
+
+[source,c]
+----
+#include <time.h> //Pour le temps
+#include <stdlib.h> //Librairie qui manquait
+#include <string.h> //Librairie pour utiliser la fonction strlen
+
+...
+
+//Dans la fonction erase 
+int compteur = 0;
+float time = 0;
+
+...
+
+compteur++;//ajout de compteur dans le while
+
+...
+
+time = clock();
+printf("\nTemps d'execution = %.2f ms", time);
+printf("\nNombre d'itération(s) = %d fois", compteur);
+
+...
+
+//création d'un main car oublie de la part de l'auteur de l'algo
+void main(){
+   printf("\nChaine de caractère  = %s ", erase("issou s s s s "));
+}
+
+----
+
+
+
+=== Prérequis
+
+
+[.text-justify]
+Ajout de la librairie suivante :  +
+
+[SOURCE, c]
+----
+#include <time.h>
+oublis :
+#include <stdlib.h>
+#include <string.h>
+----
+
+[.text-justify]
+Permet de déterminer le temps d'exécution de l'algorithme  +
+
+
+=== Reproductibilité
+
+[.text-justify]
+Lancer l'algorithme avec les chaînes de caractères contenue dans le jeux d'essaie du tableau ci-dessous :
+
+
+=== Analyse de la sobriété 
+[.text-justify]
+La sobriété d'un programme peut se déterminer en fonction sa capacité à utiliser des ressources, quels soient spatiales (mémoire) ou bien temporelle (temps d'exécution). Afin d'avoir une idée de ce que le programme consomme en mémoire, je vais réinvestir le module de programmation bas niveau et plus précisément un des TP ou l'on utilisait une méthode ``sizeof()`` ainsi je pourrais avoir une idée de combien de mémoire en octet l'algorithme à besoin. (Ici je vais surtout utilser les variables déclarées comme les indices, les tableaux de caractères etc.)
+
+=== Tests et temps d'exécution
+[.text-justify]
+[green]#*Ce programme passe tous les tests !*# +
+ +
+
+Les espaces ont été remplacés par le caractère ``_``.
+
+|===
+|*Chaînes de caractères de tests*|*Résultat de l'algorithme*|*Résultats attendus*|*Temps d'exécution*
+|``''`` (vide)|[green]#Test passed#| ``''``| 2.00 ms
+|``'06___07_65_19_70_'``|[green]#Test passed#| ``'06___07651970'``| 3.00 ms
+|``'_i_ssou__chancla__'``|[green]#Test passed#| ``'issou__chancla__'``| 5.00 ms
+|``'Cou_cou\__J_M__B'``|[green]#Test passed#| ``'Coucou\__JM__B'``| 4.00 ms
+|``'_'``|[green]#Test passed#| ``''``| 1.00 ms
+|``'__'``|[green]#Test passed#| ``'__'``| 0.00 ms
+|===
+
+
+=== Consomation mémoire (en octet)
+
+
+|===
+|*Variables utilisées*|*Coût en octet (résultat fonction sizeof)*
+|``'int i = 0, j = 0;'`` |[yellow]#4 octets pour variable de type int nommée 'i'    4 octets pour variable de type int nommée 'j'#
+|``'int taille '``|[yellow]#4 octets pour variable de type int nommée 'taille'#
+|``'char* chaine'``|[yellow]#4 octets pour le tableau de char nommée 'chaine'#
+|``'char* newChaine'``|[yellow]#4 octets pourle tableau de char nommée 'newChaine'#
+| [green]#Au total :# | [yellow]#20 octets sont nécessaires en mémoire pour que cet algorithme fonctionne correctement#
+|===
+
+== [yellow]#Sobriété n°67 (JAVA)#
+
+*NOTATION*
+|===
+|*5* point|_L'algo fonctionne correctement._
+|===
+
+
+=== Prérequis
+
+
+[.text-justify]
+Ajout des librairies suivantes :  +
+
+[SOURCE, JAVA]
+----
+import org.junit.Test;
+import static org.junit.Assert.assertEquals
+System.nanoTime();
+----
+
+[.text-justify]
+Afin d'effectuer les tests 
+
+Pour calculer le temps d'exécution de l'algorithme
+
+
+=== Reproductibilité
+
+[.text-justify]
+Lancer l'algorithme avec les chaînes de caractères contenue dans le jeux d'essaie du tableau ci-dessous :
+
+
+=== Analyse de la sobriété 
+[.text-justify]
+La sobriété d'un programme peut se déterminer en fonction sa capacité à utiliser des ressources, quels soient spatiales (mémoire) ou bien temporelle (temps d'exécution). Afin d'avoir une idée de ce que le programme consomme en mémoire, je vais utiliser un article de l'url suivant [blue]#"http://w4.uqo.ca/iglewski/ens/inf1563/src/intro/intro_vars.php"# qui associe pour chaque type (int, double etc.) sont coût en octet, de ce fait je pourrais déterminer la mémoire utilsée totale de l'algorithme. (Ici je vais surtout utilser les variables déclarées comme les indices, les tableaux de caractères etc.)
+
+=== Tests et temps d'exécution
+[.text-justify]
+[green]#*Ce programme passe tous les tests !*# +
+ +
+
+Les espaces ont été remplacés par le caractère ``_``.
+
+|===
+|*Chaînes de caractères de tests*|*Résultat de l'algorithme*|*Résultats attendus*|*Temps d'exécution*
+|``'_666,thenumberofthebeast__'``| [green]#Test passed# | [green]#``'666,thenumberofthebeast__'``# | 0.113 ms
+|``'06___07_65_19_70_'``|[green]#Test passed# | ``'06___07651970'``| 0.025 ms 
+|``'issou__chancla_'``|[green]#Test passed# | ``'issou__chancla'``| 0.053 ms
+|``'Cou_cou\__J_M__B'``|[green]#Test passed# | ``'Coucou\__JM__B'``| 0.023 ms
+|``'_'``|[green]#Test passed# | ``''``| 0.018 ms
+|``'__'``|[green]#Test passed# | ``'__'``| 0.004 ms
+|===
+
+
+=== Consomation mémoire (en octet)
+
+==== Calcul de la mémoire de l'arrayList
+
+J'ai utilisé pour calculer la taille d'un mémoire consommé par une arraylist le code suivant:
+
+[SOURCE, JAVA]
+----
+public static long getBytesFromList(ArrayList<String> list) throws IOException {
+	    ByteArrayOutputStream baos = new ByteArrayOutputStream();
+	    ObjectOutputStream out = new ObjectOutputStream(baos);
+	    out.writeObject(list);
+	    out.close();
+	    return baos.toByteArray().length;
+	}
+
+ //puis dans le main
+
+System.out.println(getBytesFromList(arrayList));  
+----
+
+Le résultat est sous forme de bit, il faut donc diviser par 8 pour avoir le résultat sous forme d'octet. Ainsi 58/8 = 7,25 octets.
+
+|===
+|*Variables utilisées*|*Coût en octet (d'après le site: "http://w4.uqo.ca/iglewski/ens/inf1563/src/intro/intro_vars.php")*
+|``'boolean etaitEspace = false;'`` |[yellow]#1 octets pour variable de type boolean nommée 'etaitEspace'#
+|``'boolean premierPassage = true;'`` |[yellow]#1 octets pour variable de type int nommée 'premierPassage'#
+|``'ArrayList<String> arrayList'``|[yellow]#7,25 octets pour variable de type string nommée 'str'#
+|``'int len'``|[yellow]#4 octets pour le tableau de char nommée 'len'#
+|``'int indice'``|[yellow]#4 octets pour le tableau de char nommée 'indice'#
+| [green]#Au total :# | [yellow]#17,25 octets sont nécessaires en mémoire pour que cet algorithme fonctionne correctement#
+|===
+
+== Classement 
+
+|===
+|*Place*|*Algo*|*Raisons*
+|1. | sobriété-67.java (5 points) | Algorithme qui fonctionne et consomme moins que les deux autres algorithmes (17.25 octets contre 20 pour le deuxième)
+|2. | sobriété-57.c (4 points) | Algorithme qui fonctionne bien malgré les corrections que j'ai du appliquer pour le faire fonctionner, il demeure cependant plus performant car produit l'affichage attendu par rapport au dernier algorithme.
+|3. | sobriété-166.c (1 point) | Ne produit pas les résultats attendus, de ce fait je ne peux que le mettre en dernière position.
+|===
