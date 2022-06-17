@@ -1,0 +1,344 @@
+= [red]#SAE Algorithme 2.02 partie Efficacité#
+:toc:
+:toc-title: Table des matières
+:toclevels: 6
+:numbered:
+:nofooter:
+
+Réalisé par *Sacilotto Nicolas (4A)*
+
+
+{empty} +
+
+
+*NOTATION*
+|===
+|*Cas*|*Points*
+|Ne compile/s'exécute pas|0
+|Ne passe pas les tests fournis ou a rate certains cas|1
+|Meilleur algo de la catégorie|5
+|2nd algo|4
+|3e algo|3
+|4e algo|2
+|===
+En cas d'ex-aequo, même note. (5/5/3/2 par exemple).
+
+{empty} +
+
+=== Efficacité n°112 (java)
+
+*NOTATION*
+|===
+|*1* points| Passe tous les tests, cependant il reste moins efficace que les autres
+|===
+
+[.text-justify]
+Cet algorithme présente une efficacité satisfaisante en traitant tous les cas, avec des temps d'exécution rapides et une complexité qualifiable de linéaire.
+
+
+==== Prérequis
+[.text-justify]
+Vérifier la présence du fichier ``efficacite112.java`` dans le répertoire ``~/src/analyse/solutions``. +
+ +
+
+[.text-justify]
+Remplacer la ligne n°7 du fichier ``EraserTest.java`` (celle avec le commentaire "replace this line") du répertoire ``~/src/test/java`` par le code suivant : +
+
+[SOURCE, java]
+----
+import analyse.solutions.efficacite112;
+----
+
+[.text-justify]
+Et remplacer toutes les notations ``Eraser`` du fichier par ``efficacite112``.
+
+[.text-jutify]
+Ce programme permet de vérifier que le programme traite bien tous les cas donnés. +
+ +
+
+[.text-justify]
+Le fichier ``testAnalyse.java`` du répertoire ``~/src/analyse`` permet d'obtenir les temps d'exécution du programme en fonction de chaînes générées aléatoirement de tailles données.
+
+
+==== Reproductibilité
+[.text-justify]
+Lancer le code de ``EraserTest.java``et vérifier que le programme traite tous les cas donnés.
+
+[.text-justify]
+Lancer le code de ``testAnalyse.java`` et analyser les temps d'exécution en fonction des différentes tailles des chaînes de caractères pour la partie "TEST DU PROGRAMME efficacite112".
+
+
+==== Analyse de l'Efficacité
+[.text-justify]
+L'efficacité d'un programme peut se déterminer en fonction de sa complexité et de son temps d'exécution pour différents cas le concernant (des chaînes de caractères de tailles différentes dans le cadre du problème donné pour cette SAE).
+
+==== Tests
+[.text-justify]
+[green]#*Ce programme passe tous les tests.*#
+
+Les espaces ont été remplacés par le caractère ``_``.
+
+|===
+|*Chaînes de caractères de tests*|*Résultats*
+|``''`` (vide)|Test passed
+|``'06___07_65_19_70_'``|Test passed
+|``'666,_the_number_of_the_beast'``|Test passed
+|``'Cou_cou\__J_M__B'``|Test passed
+|``'_'``|Test passed
+|``'__'``|Test passed
+|===
+
+
+==== Temps d'exécution
+[.text-justify]
+Les temps d'exécution analysés via le programme ``testAnalyse.java`` (en milli-secondes) semblent être inconstants et dépendent surtout du nombre et du placement des espaces contenus dans les chaînes de caractère données.
+
+|===
+|*Tailles des chaînes*|*Temps d'exécution*
+|1 caractères|~0.016 ms
+|10 caractères|~0.029 ms
+|100 caractères|~0.251 ms
+|1000 caractères|~1.868 ms
+|===
+
+
+==== Complexité
+La complexité du programme ``efficacite112.java`` semble se rapprocher de *O(kn)* (avec k étant un nombre réel), les temps d'exécution évoluant de manière linéaire en fonction de la taille des chaînes données. Déterminer une complexité plus précise nécessiterait d'autres paramètres comme le nombre d'espace dans la chaîne ainsi que leur disposition.
+
+
+=== Efficacité n°36 (java)
+
+*NOTATION*
+|===
+|*1* points| Passe tous les tests, cependant il reste moins efficace que les autres
+|===
+
+[.text-justify]
+Cet algorithme présente une efficacité satisfaisante en traitant tous les cas, avec des temps d'exécution rapides et une complexité qualifiable de linéaire.
+
+
+==== Prérequis
+[.text-justify]
+Vérifier la présence du fichier ``efficacite36.java`` dans le répertoire ``~/src/analyse/solutions``. +
+ +
+
+[.text-justify]
+Remplacer la ligne n°7 du fichier ``EraserTest.java`` (celle avec le commentaire "replace this line") du répertoire ``~/src/test/java`` par le code suivant : +
+
+[SOURCE, java]
+----
+import analyse.solutions.efficacite36;
+----
+
+[.text-justify]
+Et remplacer toutes les notations ``Eraser`` du fichier par ``efficacite36``.
+
+[.text-jutify]
+Ce programme permet de vérifier que le programme traite bien tous les cas donnés. +
+ +
+
+[.text-justify]
+Le fichier ``testAnalyse.java`` du répertoire ``~/src/analyse`` permet d'obtenir les temps d'exécution du programme en fonction de chaînes générées aléatoirement de tailles données.
+
+
+==== Reproductibilité
+[.text-justify]
+Lancer le code de ``EraserTest.java``et vérifier que le programme traite tous les cas donnés.
+
+[.text-justify]
+Lancer le code de ``testAnalyse.java`` et analyser les temps d'exécution en fonction des différentes tailles des chaînes de caractères pour la partie "TEST DU PROGRAMME efficacite36".
+
+
+==== Analyse de l'Efficacité
+[.text-justify]
+L'efficacité d'un programme peut se déterminer en fonction de sa complexité et de son temps d'exécution pour différents cas le concernant (des chaînes de caractères de tailles différentes dans le cadre du problème donné pour cette SAE).
+
+==== Tests
+[.text-justify]
+[green]#*Ce programme passe tous les tests.*#
+
+Les espaces ont été remplacés par le caractère ``_``.
+
+|===
+|*Chaînes de caractères de tests*|*Résultats*
+|``''`` (vide)|Test passed
+|``'06___07_65_19_70_'``|Test passed
+|``'666,_the_number_of_the_beast'``|Test passed
+|``'Cou_cou\__J_M__B'``|Test passed
+|``'_'``|Test passed
+|``'__'``|Test passed
+|===
+
+
+==== Temps d'exécution
+[.text-justify]
+Les temps d'exécution analysés via le programme ``testAnalyse.java`` (en milli-secondes) semblent être inconstants et dépendent surtout du nombre et du placement des espaces contenus dans les chaînes de caractère données.
+
+|===
+|*Tailles des chaînes*|*Temps d'exécution*
+|1 caractères|~0.029 ms
+|10 caractères|~0.062 ms
+|100 caractères|~0.323 ms
+|1000 caractères|~2.268 ms
+|===
+
+
+==== Complexité
+La complexité du programme ``efficacite36.java`` semble se rapprocher de *O(kn)* (avec k étant un nombre réel), les temps d'exécution évoluant de manière linéaire en fonction de la taille des chaînes données. Déterminer une complexité plus précise nécessiterait d'autres paramètres comme le nombre d'espace dans la chaîne ainsi que leur disposition.
+
+
+=== Efficacité n°75 (java)
+
+*NOTATION*
+|===
+|*1* points| Passe tous les tests, cependant il reste moins efficace que les autres
+|===
+
+[.text-justify]
+Cet algorithme présente une efficacité satisfaisante en traitant tous les cas, avec des temps d'exécution rapides et une complexité qualifiable de linéaire.
+
+
+==== Prérequis
+[.text-justify]
+Vérifier la présence du fichier ``efficacite75.java`` dans le répertoire ``~/src/analyse/solutions``. +
+ +
+
+[.text-justify]
+Remplacer la ligne n°7 du fichier ``EraserTest.java`` (celle avec le commentaire "replace this line") du répertoire ``~/src/test/java`` par le code suivant : +
+
+[SOURCE, java]
+----
+import analyse.solutions.efficacite75;
+----
+
+[.text-justify]
+Et remplacer toutes les notations ``Eraser`` du fichier par ``efficacite75``.
+
+[.text-jutify]
+Ce programme permet de vérifier que le programme traite bien tous les cas donnés. +
+ +
+
+[.text-justify]
+Le fichier ``testAnalyse.java`` du répertoire ``~/src/analyse`` permet d'obtenir les temps d'exécution du programme en fonction de chaînes générées aléatoirement de tailles données.
+
+
+==== Reproductibilité
+[.text-justify]
+Lancer le code de ``EraserTest.java``et vérifier que le programme traite tous les cas donnés.
+
+[.text-justify]
+Lancer le code de ``testAnalyse.java`` et analyser les temps d'exécution en fonction des différentes tailles des chaînes de caractères pour la partie "TEST DU PROGRAMME efficacite75".
+
+
+==== Analyse de l'Efficacité
+[.text-justify]
+L'efficacité d'un programme peut se déterminer en fonction de sa complexité et de son temps d'exécution pour différents cas le concernant (des chaînes de caractères de tailles différentes dans le cadre du problème donné pour cette SAE).
+
+==== Tests
+[.text-justify]
+[green]#*Ce programme passe tous les tests.*#
+
+Les espaces ont été remplacés par le caractère ``_``.
+
+|===
+|*Chaînes de caractères de tests*|*Résultats*
+|``''`` (vide)|Test passed
+|``'06___07_65_19_70_'``|Test passed
+|``'666,_the_number_of_the_beast'``|Test passed
+|``'Cou_cou\__J_M__B'``|Test passed
+|``'_'``|Test passed
+|``'__'``|Test passed
+|===
+
+
+==== Temps d'exécution
+[.text-justify]
+Les temps d'exécution analysés via le programme ``testAnalyse.java`` (en milli-secondes) semblent être inconstants et dépendent surtout du nombre et du placement des espaces contenus dans les chaînes de caractère données.
+|===
+|*Tailles des chaînes*|*Temps d'exécution*
+|1 caractères|~0.021 ms
+|10 caractères|~0.038 ms
+|100 caractères|~0.427 ms
+|1000 caractères|~4.86 ms
+|===
+
+
+==== Complexité
+La complexité du programme ``efficacite75.java`` semble se rapprocher de *O(n2)* (avec 2 étant le carré de n), les temps d'exécution évoluant de manière quadratique en fonction de la taille des chaînes données. Déterminer une complexité plus précise nécessiterait d'autres paramètres comme le nombre d'espace dans la chaîne ainsi que leur disposition. _Cependant on remarque une explosion du temps d'exécution lorsque la chaine de caractère est de 1000, comparé aux deux autres algorithme java, celui semble avoir une complexité de nature quadratique du au fait qu'il possède deux boucles (``while`` imbriqué dans un ``for``).
+
+
+=== Efficacité n°18 (c)
+
+*NOTATION*
+|===
+|*5* points| Passe tous les tests, et son temps d'exécution est égal à 0 ms
+|===
+
+[.text-justify]
+Cet algorithme présente une efficacité satisfaisante en traitant tous les cas, avec des temps d'exécution rapides et une complexité qualifiable de linéaire.
+
+
+==== Prérequis
+[.text-justify]
+
+[SOURCE, c]
+----
+#include <time.h>
+----
+
+
+[.text-jutify]
+Ce programme permet de vérifier que le programme traite bien tous les cas donnés. +
+ +
+
+
+==== Reproductibilité
+[.text-justify]
+Lancer le code de ``efficacite-18.c`` et regarder si il passe les test du tableau de la partie test.
+
+
+
+==== Analyse de l'Efficacité
+[.text-justify]
+L'efficacité d'un programme peut se déterminer en fonction de sa complexité et de son temps d'exécution pour différents cas le concernant (des chaînes de caractères de tailles différentes dans le cadre du problème donné pour cette SAE).
+
+==== Tests
+[.text-justify]
+[green]#*Ce programme passe tous les tests.*#
+
+Les espaces ont été remplacés par le caractère ``_``.
+
+|===
+|*Chaînes de caractères de tests*|*Résultats*
+|``''`` (vide)|Test passed
+|``'06___07_65_19_70_'``|Test passed
+|``'666,_the_number_of_the_beast'``|Test passed
+|``'Cou_cou\__J_M__B'``|Test passed
+|``'_'``|Test passed
+|``'__'``|Test passed
+|===
+
+
+==== Temps d'exécution
+[.text-justify]
+Les temps d'exécution analysés via la fonction clock() (en milli-secondes) semblent être constant (proche de 0 ou de 1 ms)
+|===
+|*Tailles des chaînes*|*Temps d'exécution*
+|1 caractères|~0.02 ms
+|10 caractères|~0.123 ms
+|100 caractères|~0.338 ms
+|1000 caractères|~1.23 ms
+|===
+
+
+==== Complexité
+La complexité du programme ``efficacite-18.c`` semble se rapprocher de *O(kn)* (avec k étant un nombre réel), les temps d'exécution évoluant de manière linéaire en fonction de la taille des chaînes données. Déterminer une complexité plus précise nécessiterait d'autres paramètres comme le nombre d'espace dans la chaîne ainsi que leur disposition.
+
+
+|===
+|*Place*|*Algo*|*Raisons*
+|1. | efficacite-18.c (5 points) | Algorithme efficace et surtout écrit en C (best langage)
+|2. | efficacite112.java (4points) | Met plus de temps que le programme de C
+|3. | efficacite-36.java (3 point) | Est à peine plus long que l'algo en deuxième position
+|4. | efficacite-75.java (2 point) | complexité quadratique donc dernière position
+|===

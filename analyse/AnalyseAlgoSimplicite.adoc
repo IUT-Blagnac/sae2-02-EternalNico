@@ -1,0 +1,295 @@
+= [red]#SAE Algorithme 2.02 partie Simplicité#
+:toc:
+:toc-title: Table des matières
+:toclevels: 6
+:numbered:
+:nofooter:
+
+Réalisé par *Sacilotto Nicolas (4A)*
+
+
+{empty} +
+
+
+*NOTATION*
+|===
+|*Cas*|*Points*
+|Ne compile/s'exécute pas|0
+|Ne passe pas les tests fournis ou a rate certains cas|1
+|Meilleur algo de la catégorie|5
+|2nd algo|4
+|3e algo|3
+|4e algo|2
+|===
+En cas d'ex-aequo, même note. (5/5/3/2 par exemple).
+
+{empty} +
+
+== [yellow]#Simplicité n°8 (python)#
+
+*NOTATION*
+|===
+|*5* points|_L'algo ne produit pas le résultat attendu lorsque l'on renseigne un voir des espaces en début de chaine de caractère. Néanmoins il reste lisible et est pas mal classé par codeacy_
+|===
+
+
+=== Prérequis
+
+[.text-justify]
+Afin de pouvoir évaluer la qualité de code, je vais utiliser pour cela le logiciel codeacy
+
+
+=== Analyse de la simplicité
+
+[.text-justify]
+La simplicité d'un programme se mesure par plusieurs facteurs comme : 
+
+* La présence de commentaire pour bien comprendre le code 
+
+* L'indentation du code afin de mieux le visualiser 
+
+* Sa qualité de code (nom de variables/conteneur cohérent et non random, comparaison valable etc.)
+
+=== Reproductibilité
+
+[.text-justify]
+Lancer l'algorithme ayant pour code ceci : 
+
+[SOURCE, python]
+----
+print("'",erase(x),"'")
+----
+
+[.text-justify]
+Ou ici le "x" est à remplacer par les chaines de caractères dans le tableau de la partie "test". 
+
+=== Lisibilité du code 
+
+|===
+|*Commentaires*|*Indentation*|*Qualité de code (codeacy)*
+|Cet algorithme possède de nombreux commentaires, de ce fait il est possible de le comprendre rapidement. De plus les commantaires sont situés aux bons endroits et apprtent des précisons la ou c'est nécessaire| Il est également bien indenté, de même que pour les commentaires, cela nous permet de mieux comprendre le code mais aussi de mieux le visualer car le code est épuré| D'après codeacy une ligne de code pose problème qui renvoie une "minor code style". L'algorithme est classé [red]#B# 
+|=== 
+
+
+=== Tests 
+
+[.text-justify]
+[red]#*Ce programme ne passe pas tous les tests !*# +
+ +
+
+Les espaces ont été remplacés par le caractère ``_``.
+
+|===
+|*Chaînes de caractères de tests*|*Résultat de l'algorithme*|*Résultats attendus*
+|``''`` (vide)|[green]#Test passed#| ``''``
+|``'06___07_65_19_70_'``|[green]#Test passed#| ``'06___07651970'``
+|``'issou_chancla'``|[green]#Test passed#| ``'issouchancla'``
+|``'Cou_cou\__J_M__B'``|[green]#Test passed#| ``'Coucou\__JM__B'``
+|``'_'``|[red]#❌ Ne s'exécute pas, erreur d'unbound#| ``''``
+|``'__'``|[red]#❌ Ne s'exécute pas, erreur d'unbound#| ``'__'``
+|===
+
+Il semblerait que cet algorithme ne s'exécute pas lorsque l'on renseigne un voir des espaces en début de la chaine de caractère
+
+== [yellow]#Simplicité n°37 (python)#
+
+*NOTATION*
+|===
+|*3* points|_L'algo ne produit le résultat attendu mais ne contient pas suffisement de commentaire pour mieux comprendre le code_
+|===
+
+
+=== Prérequis
+
+[.text-justify]
+Afin de pouvoir évaluer la qualité de code, je vais utiliser pour cela le logiciel codeacy
+
+
+=== Analyse de la simplicité
+
+[.text-justify]
+La simplicité d'un programme se mesure par plusieurs facteurs comme : 
+
+* La présence de commentaire pour bien comprendre le code 
+
+* L'indentation du code afin de mieux le visualiser 
+
+* Sa qualité de code (nom de variables/conteneur cohérent et non random, comparaison valable etc.)
+
+=== Reproductibilité
+
+[.text-justify]
+Lancer l'algorithme ayant pour code ceci : 
+
+[SOURCE, python]
+----
+print("'",erase(x),"'")
+----
+
+[.text-justify]
+Ou ici le "x" est à remplacer par les chaines de caractères dans le tableau de la partie "test". 
+
+=== Lisibilité du code 
+
+|===
+|*Commentaires*|*Indentation*|*Qualité de code (codeacy)*
+|Cet algorithme ne possède pas de commentaire si ce n'est la documentation concernant de ce que fait la fonction ``erase()`` de ce fait il est un peu plus difficile à comprendre| Cet algorithme est bien indenté mais n'est pas assez épuré, il aurait fallu ajouter plus de saut à la ligne pour bien délimiter la partie décaration et affectation des variables, comparaisons, boucles et le return| D'après codeacy une ligne de code pose problème qui renvoie une "minor code style" pour une erreur de placement de la doc qui se trouve sur la ligne deux et non sur la ligne une, c'est plutôt une sorte de convention non respectée. L'algorithme est classé [red]#B# 
+|=== 
+
+
+=== Tests 
+[.text-justify]
+[red]#*Ce programme ne passe pas tous les tests !*# +
+ +
+
+Les espaces ont été remplacés par le caractère ``_``.
+
+|===
+|*Chaînes de caractères de tests*|*Résultat de l'algorithme*|*Résultats attendus*
+|``''`` (vide)|[green]#Test passed#| ``''``
+|``'06___07_65_19_70_'``|[green]#Test passed#| ``'06___07651970'``
+|``'issou_chancla'``|[green]#Test passed#| ``'issouchancla'``
+|``'Cou_cou\__J_M__B'``|[green]#Test passed#| ``'Coucou\__JM__B'``
+|``'_'``|[green]#Test passed#| ``''``
+|``'__'``|[red]#❌ ``''``#| ``'__'``
+|===
+
+
+== [yellow]#Simplicité n°86 (python)#
+
+*NOTATION*
+|===
+|*2* points|_L'algo ne contient aucun commentaire et produit une erreur d'out of bound cf. partie "test"_
+|===
+
+
+=== Prérequis
+
+[.text-justify]
+Afin de pouvoir évaluer la qualité de code, je vais utiliser pour cela le logiciel codeacy
+
+
+=== Analyse de la simplicité
+
+[.text-justify]
+La simplicité d'un programme se mesure par plusieurs facteurs comme : 
+
+* La présence de commentaire pour bien comprendre le code 
+
+* L'indentation du code afin de mieux le visualiser 
+
+* Sa qualité de code (nom de variables/conteneur cohérent et non random, comparaison valable etc.)
+
+=== Reproductibilité
+
+[.text-justify]
+Lancer l'algorithme ayant pour code ceci : 
+
+[SOURCE, python]
+----
+print("'",enlever_blanc(x),"'")
+----
+
+[.text-justify]
+Ou ici le "x" est à remplacer par les chaines de caractères dans le tableau de la partie "test". 
+
+=== Lisibilité du code 
+
+|===
+|*Commentaires*|*Indentation*|*Qualité de code (codeacy)*
+|Cet algorithme ne possède pas de commentaire | Cet algorithme est bien indenté mais n'est pas assez épuré, il aurait fallu ajouter plus de saut à la ligne pour bien délimiter la partie décaration et affectation des variables, comparaisons, boucles et le return| D'après codeacy une ligne de code pose problème qui renvoie une "minor code style" ainsi qu'une "medium code style". L'algorithme est classé [red]#C# 
+|=== 
+
+
+=== Tests 
+[.text-justify]
+[red]#*Ce programme ne passe pas tous les tests !*# +
+ +
+
+Les espaces ont été remplacés par le caractère ``_``.
+
+|===
+|*Chaînes de caractères de tests*|*Résultat de l'algorithme*|*Résultats attendus*
+|``''`` (vide)|[green]#Test passed#| ``''``
+|``'06___07_65_19_70_'``|[red]#❌ Ne s'exécute pas, erreur d'unbound#| ``'06___07651970'``
+|``'issou_chancla'``|[green]#Test passed#| ``'issouchancla'``
+|``'Cou_cou\__J_M__B'``|[green]#Test passed#| ``'Coucou\__JM__B'``
+|``'_'``|[red]#❌ Ne s'exécute pas, erreur d'unbound#| ``''``
+|``'__'``|[green]#Test passed#| ``'__'``
+|===
+
+Il semblerai que lorsque l'on place un espace ("_") à la fin de la chaine de caractère, il y a une erreur d'out of bound
+
+
+== [yellow]#Simplicité n°114 (python)#
+
+*NOTATION*
+|===
+|*4* points|_L'algo contient que quelques commentaires et est très peu épuré, en plus de cela il est fonctionnel et passe tous les tests_
+|===
+
+
+=== Prérequis
+
+[.text-justify]
+Afin de pouvoir évaluer la qualité de code, je vais utiliser pour cela le logiciel codeacy
+
+
+=== Analyse de la simplicité
+
+[.text-justify]
+La simplicité d'un programme se mesure par plusieurs facteurs comme : 
+
+* La présence de commentaire pour bien comprendre le code 
+
+* L'indentation du code afin de mieux le visualiser 
+
+* Sa qualité de code (nom de variables/conteneur cohérent et non random, comparaison valable etc.)
+
+=== Reproductibilité
+
+[.text-justify]
+Lancer l'algorithme ayant pour code ceci : 
+
+[SOURCE, python]
+----
+print("'",byeespace1(x),"'")
+----
+
+[.text-justify]
+Ou ici le "x" est à remplacer par les chaines de caractères dans le tableau de la partie "test". 
+
+=== Lisibilité du code 
+
+|===
+|*Commentaires*|*Indentation*|*Qualité de code (codeacy)*
+|Cet algorithme possède quelques commentaires qui aident à comprendre le code, néanmoins une doc générale sur ce que fait la fonction ``byeespace()`` ainsi qu'un description des trois if imbriqués ne seraient pas de refus | Cet algorithme est bien indenté, il est également bien épuré, pas de points négatifs à ce niveau là | D'après codeacy une ligne de code pose problème qui renvoie une "minor code style" ainsi qu'une "medium code style", l'erreur majeure ici provient d'une non utilisaton d'une variable déclaré nommée 'lettre'. L'algorithme est classé [red]#C# 
+|=== 
+
+
+=== Tests 
+[.text-justify]
+[green]#*Ce programme passe tous les tests !*# +
+ +
+
+Les espaces ont été remplacés par le caractère ``_``.
+
+|===
+|*Chaînes de caractères de tests*|*Résultat de l'algorithme*|*Résultats attendus*
+|``''`` (vide)|[green]#Test passed#| ``''``
+|``'06___07_65_19_70_'``|[green]#Test passed#| ``'06___07651970'``
+|``'issou_chancla'``|[green]#Test passed#| ``'issouchancla'``
+|``'Cou_cou\__J_M__B'``|[green]#Test passed#| ``'Coucou\__JM__B'``
+|``'_'``|[green]#Test passed#| ``''``
+|``'__'``|[green]#Test passed#| ``'__'``
+|===
+
+== Classement
+
+|===
+|*Place*|*Algo*|*Raisons*
+|1. | simplicite-8.py (5 points) | Algorithme qui fonctionne à 60% des tests passés, cepandant il est placé en tête car il est très bien indenté, très épuré ce qui le rend plus instinctif que les autres. De plus il est bien classé par rapport aux autres quant à sa qualité de code évaluée par codeacy.
+|2. | simplicite-114.py (4 points) | Algorithme qui fonctionne bien cependant il reste assez peu commenté et très peu épuré, il manque de commentaires notamment sur la partie des trois if imbriqués.
+|3. | simplicite-37.py (3 point) | L'algortihme ne possède aucun commentaire mis à part une documentation farfelue mais passe les tests en majorité par rapport au dernier du classement.
+|4. | simplicite-86.py (2 point) | Ne produit pas l'affichage attendu cf partie test de cet algorithme et en plus de cela non présence de quelconque commentaire.
+|===
